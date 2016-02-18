@@ -27,3 +27,4 @@ config/environments/*.local.yml
 /app/assets/javascripts/i18n/translations.js
 /config/settings/production.yml
 /doc/*
+/Gemfile.lock
