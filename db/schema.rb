@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308151817) do
+ActiveRecord::Schema.define(version: 20160422085821) do
 
   create_table "bank_types", force: :cascade do |t|
     t.string   "name",          limit: 255

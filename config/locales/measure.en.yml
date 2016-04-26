@@ -1,0 +1,11 @@
+en:
+  measures:
+    measure: "Measure"
+    name: "Name"
+    abbreviation: "Abbreviation"
+    action: "Action"
+    unit_of_measure: "Unit Of Measure"
+    breadcrumbs:
+      measure: "Measure"
+      add_new: "New"
+      edit: "Edit: %{name}"

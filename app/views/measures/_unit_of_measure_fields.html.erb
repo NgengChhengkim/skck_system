@@ -1,0 +1,14 @@
+<%= f.fields_for :unit_of_measures do |ff| %>
+  <div class="row unit-of-measure-field">
+    <div class="col-md-10">
+      <%= ff.label :name %>
+      <%= ff.text_field :name, class: "form-control" %>
+
+      <%= ff.label :abbreviation %>
+      <%= ff.text_field :abbreviation, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= ff.link_to_remove t("btn.remove") %>
+    </div>
+  </div>
+<% end %>

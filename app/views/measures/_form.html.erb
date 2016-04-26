@@ -1,0 +1,36 @@
+<div class="row" id="measure">
+  <div class="col-md-12">
+  <ol class="breadcrumb">
+    <li><%= link_to "", root_path, class: "glyphicon glyphicon-home" %></li>
+    <li><%= link_to t("measures.breadcrumbs.measure"),
+      measures_path %></li>
+    <% if @measure.new_record? %>
+      <li class="active"><%= t "measures.breadcrumbs.add_new" %></li>
+    <% else %>
+      <li class="active"><%= t "measures.breadcrumbs.edit",
+        name: @measure.name %></li>
+    <% end %>
+  </ol>
+  <div class="title"><%= t "measures.measure" %></div>
+  <hr>
+  <%= nested_form_for @measure do |f| %>
+    <div class="col-md-6">
+      <%= render "shared/errors", object: @measure %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :abbreviation %>
+      <%= f.text_area :abbreviation, class: "form-control" %>
+
+      <hr>
+      <h4><%= t "measures.unit_of_measure" %></h4>
+
+      <%= render "unit_of_measure_fields", f: f %>
+      <p><%= f.link_to_add t("add"), :unit_of_measures %></p>
+
+      <%= f.submit t("btn.save"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+</div>

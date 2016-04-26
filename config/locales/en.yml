@@ -38,6 +38,7 @@ en:
     add_new: "Add New"
     save: "Save"
     cancel: "Cancel"
+    remove: "Remove"
   flashs:
     messages:
       created: "Created successfully!"

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <ol class="breadcrumb">
+      <li><%= link_to "", root_path, class: "glyphicon glyphicon-home" %></li>
+      <li class="active"><%= t "measures.breadcrumbs.measure" %></li>
+    </ol>
+    <span class="title"><%= t "measures.measure" %></span>
+    <span class="btn-add-new pull-right ">
+      <%= link_to t("btn.add_new"), new_measure_path, class: "btn btn-primary" %>
+    </span>
+
+    <table class="table table-bordered table-striped tbl-measure">
+      <thead>
+        <th><%= t "measures.name" %></th>
+        <th><%= t "measures.abbreviation" %></th>
+        <th colspan="2"><%= t "measures.action" %></th>
+      </thead>
+      <tbody >
+        <%= render @measures %>
+      </tbody>
+    </table>
+  </div>
+</div>

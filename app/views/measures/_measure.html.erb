@@ -1,0 +1,8 @@
+<tr>
+  <td><%= measure.name %></td>
+  <td><%= measure.abbreviation %></td>
+  <td><%= link_to t("btn.edit"), edit_measure_path(measure) %></td>
+  <td><%= link_to t("btn.delete"), measure, method: :delete,
+                  data: {confirm: t("messages.confirm_delete")} %></td>
+</tr>
+

@@ -4,4 +4,6 @@ class UnitOfMeasure < ActiveRecord::Base
 
   has_many :invoice_transactions
   has_many :item_lists
+
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
 end

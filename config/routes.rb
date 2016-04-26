@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :customer_venders, only: :index
   resources :bank_types
   resources :invoices
+  resources :measures
 
   namespace :api, defaults: {format: "json"} do
     devise_for :users, only: :session
