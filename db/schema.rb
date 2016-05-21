@@ -130,6 +130,8 @@ ActiveRecord::Schema.define(version: 20160422085821) do
     t.string   "sale_description",         limit: 255
     t.boolean  "active",                               default: true
     t.integer  "chart_of_account_id",      limit: 4
+    t.integer  "income_account_id",        limit: 4
+    t.integer  "cogs_account_id",          limit: 4
     t.integer  "company_id",               limit: 4
     t.integer  "customer_vender_id",       limit: 4
     t.integer  "item_list_type_id",        limit: 4

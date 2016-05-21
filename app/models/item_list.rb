@@ -1,6 +1,8 @@
 class ItemList < ActiveRecord::Base
-
   belongs_to :chart_of_account
+  belongs_to :income_account, class_name: "ChartOfAccount"
+  belongs_to :cogs_account, class_name: "ChartOfAccount"
+
   belongs_to :company
   belongs_to :customer_vender
   belongs_to :item_list_type

@@ -9,7 +9,7 @@ company.users.create! name: "john", email: "admin@gmail.com", password: "1234567
 
 ChartAccountType.create! name: "Bank", type_code: "bank", increament_at: 0
 ChartAccountType.create! name: "Accounts Receivable", type_code: "ar", increament_at: 0
-ChartAccountType.create! name: "Other Curent Asset", type_code: "oca", increament_at: 0
+ChartAccountType.create! name: "Other Cursrent Asset", type_code: "oca", increament_at: 0
 ChartAccountType.create! name: "Fixed Asset", type_code: "fa", increament_at: 0
 ChartAccountType.create! name: "Other Asset", type_code: "of", increament_at: 0
 ChartAccountType.create! name: "Accounts Payable", type_code: "ap", increament_at: 1

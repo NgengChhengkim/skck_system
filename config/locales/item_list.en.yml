@@ -10,3 +10,5 @@ en:
     total_qty_balance: "Total Balance"
     sub_item: "Subitem of"
     action: "Action"
+    purchase_information: "Purchase Information"
+    sales_information: "Sales Information"

@@ -1,5 +1,4 @@
 class ChartOfAccount < ActiveRecord::Base
-
   belongs_to :chart_account_type
   belongs_to :company
   belongs_to :user

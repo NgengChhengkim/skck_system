@@ -19,69 +19,78 @@
       <div class="row">
 
         <%= render "shared/errors", object: @item_list %>
-        <p class="col-md-12">
+        <div class="col-md-6">
           <%= f.label :item_list_type_id %>
           <%= f.select :item_list_type_id,
             options_for_select(@types, f.object.item_list_type_id), {}, {class: "item-list-type"} %>
-        </p>
 
-        <p class="col-md-6">
           <%= f.label :name %>
           <%= f.text_field :name, class: "form-control" %>
 
-          <%= f.label :description %>
-          <%= f.text_field :description, class: "form-control" %>
-        </p>
+          <div class="manufacturer">
+            <%= f.label :manufacturer_part_number %>
+            <%= f.text_field :manufacturer_part_number, class: "form-control" %>
+          </div>
+        </div>
 
-        <p class="col-md-6">
+        <div class="col-md-6">
           <%= f.label :chart_of_account_id %>
           <%= f.select :chart_of_account_id,
             options_for_select(@chart_accounts, f.object.chart_of_account_id),
-            {}, {class: "chart-of-account"} %>
-        </p>
+            {}, {id: "chart-account"} %>
 
-        <p class="manufacturer col-md-6">
-          <%= f.label :manufacturer_part_number %>
-          <%= f.text_field :manufacturer_part_number, class: "form-control" %>
-        </p>
+          <%= f.label :description %>
+          <%= f.text_field :description, class: "form-control" %>
 
-        <p class="other-field col-md-6">
-          <%= f.label :customer_vender_id %>
-          <%= f.select :customer_vender_id,
-            options_for_select(@customer_venders, f.object.customer_vender_id),
-            {}, {class: "customer-vender"} %>
-        </p>
+          <div class="other-field">
+            <%= f.label :unit_of_measure_id %>
+            <%= f.select :unit_of_measure_id,
+              option_groups_from_collection_for_select(@measures, :unit_of_measures, :name, :id, :name), {}, class: "unit-of-measure" %>
+          </div>
+        </div>
 
-        <p class="other-field col-md-6">
-          <%= f.label :unit_of_measure_id %>
-          <%= f.select :unit_of_measure_id,
-            option_groups_from_collection_for_select(@measures, :unit_of_measures, :name, :id, :name), {}, class: "unit-of-measure" %>
-        </p>
-        <p class="col-md-6">
+        <dir class="col-md-12"><hr></dir>
+
+        <div class="col-md-6">
           <div class="panel panel-default other-field">
-            <div class="panel-footer">Panel footer</div>
+            <div class="panel-footer"><%= t "item_lists.purchase_information" %></div>
             <div class="panel-body">
               <%= f.label :cost %>
               <%= f.text_field :cost, class: "form-control" %>
 
               <%= f.label :purchase_description %>
               <%= f.text_area :purchase_description, class: "form-control" %>
+
+              <%= f.label :cogs_account_id %>
+              <%= f.select :cogs_account_id,
+                options_for_select(@chart_accounts, f.object.customer_vender_id),
+                {}, {id: "cogs-account"} %>
+
+              <%= f.label :customer_vender_id %>
+              <%= f.select :customer_vender_id,
+                options_for_select(@customer_venders, f.object.customer_vender_id),
+                {}, {id: "customer-vender"} %>
             </div>
           </div>
-        </p>
+        </div>
 
-        <p class="col-md-6">
+        <div class="col-md-6">
           <div class="panel panel-default other-field">
-            <div class="panel-footer">Panel footer</div>
+            <div class="panel-footer"><%= t "item_lists.sales_information" %></div>
             <div class="panel-body">
               <%= f.label :price %>
               <%= f.text_field :price, class: "form-control" %>
 
               <%= f.label :sale_description %>
               <%= f.text_area :sale_description, class: "form-control" %>
+
+              <%= f.label :income_account_id %>
+              <%= f.select :income_account_id,
+                options_for_select(@chart_accounts, f.object.chart_of_account_id),
+                {}, {id: "income-account"} %>
             </div>
           </div>
-        </p>
+        </div>
         <br>
         <p class="col-md-12">
           <%= link_to t("btn.cancel"), item_lists_path, class: "btn btn-default" %>
